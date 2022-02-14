@@ -5,7 +5,6 @@
  * in ascending order using the Insertion sort algorithm
  * @list: list to sort
  */
-
 void insertion_sort_list(listint_t **list)
 {
 
@@ -28,13 +27,13 @@ void insertion_sort_list(listint_t **list)
 			node1->prev = node1->next->prev;
 			node1->next->prev = node1;
 
-			if (node1->prev == NULL)
+			if (!node1->prev)
 				*list = node1;
 			else
 				node1->prev->next = node1;
+			print_list(*list);
 		}
 		node1 = node2;
-		print_list(*list);
 
 	}
 }
